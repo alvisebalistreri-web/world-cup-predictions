@@ -23,21 +23,28 @@ export default function Home() {
 
       {/* Navigation Premium */}
       <nav className="fixed top-0 w-full z-50 bg-[#0a0e27]/80 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center space-x-3 group">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-yellow-400 blur-lg opacity-50 group-hover:opacity-75 transition" />
-                <span className="relative text-4xl">⚽</span>
+                <span className="relative text-3xl sm:text-4xl">⚽</span>
               </div>
               <div>
-                <span className="text-2xl font-black bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+                <span className="text-lg sm:text-2xl font-black bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
                   WORLD CUP
                 </span>
-                <span className="text-2xl font-black text-yellow-400 ml-2">2026</span>
+                <span className="text-lg sm:text-2xl font-black text-yellow-400 ml-1 sm:ml-2">2026</span>
               </div>
             </Link>
-            <div className="flex items-center space-x-8">
+            {/* Mobile Menu Button */}
+            <button className="sm:hidden text-white p-2">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            {/* Desktop Menu */}
+            <div className="hidden sm:flex items-center space-x-6 lg:space-x-8">
               <Link href="/dashboard" className="relative group">
                 <span className="text-white/80 group-hover:text-white font-medium transition">Matchs</span>
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300" />
@@ -48,7 +55,7 @@ export default function Home() {
               </Link>
               <Link href="/signin" className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition" />
-                <span className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#0a0e27] px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform inline-block">
+                <span className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#0a0e27] px-6 lg:px-8 py-2 lg:py-3 rounded-full font-bold hover:scale-105 transition-transform inline-block text-sm lg:text-base">
                   Connexion
                 </span>
               </Link>
@@ -58,20 +65,20 @@ export default function Home() {
       </nav>
 
       {/* Hero Section Premium */}
-      <section className="relative pt-32 pb-20 px-6">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
-              <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
-                <span className="relative flex h-3 w-3">
+            <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+              <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 sm:px-6 py-2 sm:py-3">
+                <span className="relative flex h-2 w-2 sm:h-3 sm:w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 sm:h-3 sm:w-3 bg-yellow-500"></span>
                 </span>
-                <span className="text-yellow-400 font-medium text-sm">🏆 Coupe du Monde 2026</span>
+                <span className="text-yellow-400 font-medium text-xs sm:text-sm">🏆 Coupe du Monde 2026</span>
               </div>
 
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
                 <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
                   PRONOSTIQUEZ
                 </span>
@@ -81,48 +88,48 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-xl text-white/60 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-xl text-white/60 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Rejoignez l'expérience ultime de pronostics sportifs. 
                 <span className="text-white/80 font-medium"> Défiez des milliers de fans</span>, 
                 grimpez les classements et prouvez votre expertise footballistique.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Link href="/dashboard" className="group relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition" />
-                  <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#0a0e27] px-10 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-all duration-300 shadow-2xl flex items-center space-x-3">
+                  <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#0a0e27] px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3">
                     <span>🎯</span>
-                    <span>Commencer l'Aventure</span>
+                    <span>Commencer</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>
                 </Link>
                 <Link href="/leaderboard" className="group relative">
                   <div className="absolute inset-0 bg-white/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition" />
-                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center space-x-3">
+                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3">
                     <span>🏆</span>
-                    <span>Voir le Classement</span>
+                    <span>Classement</span>
                   </div>
                 </Link>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
+              <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 sm:pt-8 border-t border-white/10">
                 <div>
-                  <div className="text-4xl font-black text-yellow-400 mb-1">48</div>
-                  <div className="text-white/40 text-sm">Matchs à jouer</div>
+                  <div className="text-2xl sm:text-4xl font-black text-yellow-400 mb-1">48</div>
+                  <div className="text-white/40 text-xs sm:text-sm">Matchs</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-black text-yellow-400 mb-1">3 pts</div>
-                  <div className="text-white/40 text-sm">Par victoire</div>
+                  <div className="text-2xl sm:text-4xl font-black text-yellow-400 mb-1">3 pts</div>
+                  <div className="text-white/40 text-xs sm:text-sm">Par victoire</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-black text-yellow-400 mb-1">∞</div>
-                  <div className="text-white/40 text-sm">Gloire éternelle</div>
+                  <div className="text-2xl sm:text-4xl font-black text-yellow-400 mb-1">∞</div>
+                  <div className="text-white/40 text-xs sm:text-sm">Gloire</div>
                 </div>
               </div>
             </div>
 
-            {/* Right Visual */}
+            {/* Right Visual - Hidden on mobile */}
             <div className="relative hidden lg:block">
               <div className="relative z-10">
                 {/* Floating Cards */}
@@ -162,18 +169,18 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-6 relative">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-black bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-4">
               COMMENT ÇA MARCHE ?
             </h2>
-            <p className="text-white/60 text-xl max-w-2xl mx-auto">
+            <p className="text-white/60 text-base sm:text-xl max-w-2xl mx-auto px-4">
               Trois étapes simples pour tenter votre chance
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 icon: '📝',
@@ -196,12 +203,12 @@ export default function Home() {
             ].map((feature, index) => (
               <div key={index} className="group relative">
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition duration-500`} />
-                <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.color} mb-6 text-4xl`}>
+                <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${feature.color} mb-6 text-3xl sm:text-4xl`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-black text-white mb-4">{feature.title}</h3>
-                  <p className="text-white/60 leading-relaxed">{feature.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-black text-white mb-4">{feature.title}</h3>
+                  <p className="text-white/60 leading-relaxed text-sm sm:text-base">{feature.desc}</p>
                 </div>
               </div>
             ))}
@@ -210,20 +217,20 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6">
+      <section className="py-16 sm:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-3xl blur-2xl opacity-20" />
-            <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-3xl p-12 text-center overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl sm:rounded-3xl blur-2xl opacity-20" />
+            <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center overflow-hidden">
               <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
               <div className="relative">
-                <h2 className="text-4xl md:text-5xl font-black text-[#0a0e27] mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#0a0e27] mb-4">
                   PRÊT À RELEVER LE DÉFI ?
                 </h2>
-                <p className="text-xl text-[#0a0e27]/80 mb-8">
+                <p className="text-base sm:text-xl text-[#0a0e27]/80 mb-6 sm:mb-8 px-2">
                   Rejoignez la compétition maintenant et écrivez votre nom dans l'histoire !
                 </p>
-                <Link href="/dashboard" className="inline-flex items-center space-x-3 bg-[#0a0e27] text-white px-10 py-5 rounded-full font-black text-lg hover:scale-105 transition-transform shadow-2xl">
+                <Link href="/dashboard" className="inline-flex items-center space-x-2 sm:space-x-3 bg-[#0a0e27] text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-black text-base sm:text-lg hover:scale-105 transition-transform shadow-2xl">
                   <span>🚀</span>
                   <span>C'EST PARTI !</span>
                 </Link>
@@ -234,13 +241,13 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-12 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="flex items-center space-x-3">
-            <span className="text-3xl">⚽</span>
-            <span className="text-white/60 font-medium">World Cup Predictions 2026</span>
+      <footer className="border-t border-white/10 py-8 sm:py-12 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <span className="text-2xl sm:text-3xl">⚽</span>
+            <span className="text-white/60 font-medium text-sm sm:text-base">World Cup Predictions 2026</span>
           </div>
-          <div className="text-white/40 text-sm">
+          <div className="text-white/40 text-xs sm:text-sm text-center">
             Fait avec passion pour les vrais fans de football ⚽
           </div>
         </div>
